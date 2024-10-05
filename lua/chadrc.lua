@@ -1,26 +1,77 @@
--- This file needs to have same structure as nvconfig.lua 
+-- This file needs to have same structure as nvconfig.lua
 -- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
--- Please read that file to know all available options :( 
+-- Please read that file to know all available options :(
 
 ---@type ChadrcConfig
-local M = {}
 
-M.base46 = {
-	theme = "chadracula",
+local WindowsTheme = {
+  theme = "catppuccin",
   transparency = true,
   hl_override = {
     Visual = {
-      bg = { "purple", -10 }
+      bg = { "blue", -20 },
     },
-    Comment = {
-      fg = "#990088"
-      -- bg = {"baby_pink"}
-    },
+
+    IblScopeChar = { fg = "blue" },
+
+    ["@comment"] = { fg = { "blue", -10 } }
   },
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
 }
+
+local LinuxTheme = {
+  theme = "chadracula",
+  transparency = true,
+  hl_override = {
+    Visual = {
+      bg = { "purple", -10 },
+      -- reverse = true
+    },
+    IblScopeChar = { fg = "pink" },
+
+    ["@comment"] = { fg = "#990088" }
+  },
+}
+
+local function getOsTheme()
+  if (vim.loop.os_uname().sysname == "Windows_NT")
+  then
+    return WindowsTheme
+  else
+    return LinuxTheme
+  end
+end
+
+local theme_os = getOsTheme()
+
+local M = {}
+
+M.nvdash = {
+  load_on_startup = true,
+
+  -- header = {
+  --   "           ▄ ▄                   ",
+  --   "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
+  --   "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
+  --   "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
+  --   "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
+  --   "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
+  --   "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
+  --   "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
+  --   "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
+  --   "                                 ",
+  -- },
+  -- 
+
+  -- buttons = {
+  --   { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
+  --   -- { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
+  --   -- { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
+  --   -- { "  Bookmarks", "Spc m a", "Telescope marks" },
+  --   -- { "  Themes", "Spc t h", "Telescope themes" },
+  --   -- { "  Mappings", "Spc c h", "NvCheatsheet" },
+  -- },
+}
+
+M.base46 = theme_os
 
 return M
