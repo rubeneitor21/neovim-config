@@ -5,7 +5,7 @@ local lspconfig = require "lspconfig"
 
 -- EXAMPLE
 local servers = { "cssls", "astro", "jdtls", "ts_ls", "tailwindcss", "pylsp", "intelephense", "rust_analyzer", "emmet_ls", "clangd",
-  "html", "cssls", "gdscript" } -- html
+  "html", "cssls", "gdscript", "lemminx" } -- html
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
