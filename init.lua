@@ -32,8 +32,11 @@ dofile(vim.g.base46_cache .. "statusline")
 require "options"
 require "nvchad.autocmds"
 
+require("custom.gitsigns")
+
 vim.schedule(function()
   require "mappings"
 end)
+
 
 -- os.execute("git pull")

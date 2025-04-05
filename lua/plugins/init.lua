@@ -44,7 +44,7 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
-}
+  }
 
   -- Color picker
   -- { "nvchad/volt",  lazy = true },
