@@ -36,4 +36,11 @@ vim.schedule(function()
   require "mappings"
 end)
 
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.CustomFoldExpr()"
+
+vim.opt.foldlevel = 99
+
+require("folds")
+
 -- os.execute("git pull")
