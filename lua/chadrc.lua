@@ -12,6 +12,8 @@ local WindowsTheme = {
       bg = { "blue", -20 },
     },
 
+    NonText = {fg = "#8AB6D6"},
+
     IblScopeChar = { fg = "blue" },
 
     ["@comment"] = { fg = { "blue", -10 } }
@@ -26,10 +28,13 @@ local LinuxTheme = {
       bg = { "purple", -10 },
       -- reverse = true
     },
+
+    NonText = {fg = "#D28FB3"},
+
     IblScopeChar = { fg = "pink" },
 
     -- ["@comment"] = { fg = "#990088" }
-    ["@comment"] = {fg = {"purple", -20}}
+    ["@comment"] = { fg = { "purple", -20 } }
   },
 }
 
