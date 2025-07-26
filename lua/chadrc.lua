@@ -5,18 +5,18 @@
 ---@type ChadrcConfig
 
 local WindowsTheme = {
-  theme = "catppuccin",
+  theme = "rosepine",
   transparency = true,
   hl_override = {
     Visual = {
-      bg = { "blue", -20 },
+      bg = "#bf2f60" ,
     },
 
-    NonText = {fg = "#8AB6D6"},
+    NonText = {fg = "#ff3e80"},
 
-    IblScopeChar = { fg = "blue" },
+    IblScopeChar = { fg = {"pink", -10} },
 
-    ["@comment"] = { fg = { "blue", -10 } }
+    ["@comment"] = { fg = { "pink", -10 } }
   },
 }
 
