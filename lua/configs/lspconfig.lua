@@ -12,7 +12,7 @@ vim.lsp.set_log_level("debug")
 
 -- EXAMPLE
 local servers = { "cssls", "astro", "jdtls", "ts_ls", "pylsp", "intelephense", "rust_analyzer", "emmet_ls", "clangd",
-  "html", "cssls", "gdscript", "lemminx", "cmake" } -- html
+  "html", "cssls", "lemminx", "cmake", "csharp_ls" } -- html
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
