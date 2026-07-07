@@ -12,13 +12,17 @@ local log = require("vim.lsp.log")
 
 -- EXAMPLE
 local servers = { "cssls", "astro", "jdtls", "ts_ls", "pylsp", "intelephense", "rust_analyzer", "emmet_ls", "clangd",
-  "html", "cssls", "lemminx", "cmake"} -- html
+  "html", "cssls", "lemminx", "cmake", "gdscript"} -- html
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
   vim.lsp.enable(lsp)
 end
+
+-- lspconfig['gdscript'].setup {
+--   cmd = {"nc", "127.0.0.1", "6005"}
+-- }
 
 -- lspconfig['csharp_ls'].setup {
 --   on_attach = nvlsp.on_attach,
