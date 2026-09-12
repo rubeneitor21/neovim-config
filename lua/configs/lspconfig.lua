@@ -12,8 +12,10 @@ local log = require("vim.lsp.log")
 
 -- EXAMPLE
 local servers = { "cssls", "astro", "jdtls", "ts_ls", "pylsp", "intelephense", "rust_analyzer", "emmet_ls", "clangd",
-  "html", "cssls", "lemminx", "cmake", "gdscript"} -- html
+  "html", "cssls", "lemminx", "cmake", "gdscript", "slint_lsp", "qmlls"} -- html
 local nvlsp = require "nvchad.configs.lspconfig"
+
+vim.lsp.config('qmlls', { cmd = { 'qmlls6' } })
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do

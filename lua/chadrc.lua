@@ -20,12 +20,18 @@ local WindowsTheme = {
   },
 }
 
+-- Rosas
+-- https://htmlcolorcodes.com/colors/shades-of-pink/
+
 local LinuxTheme = {
   theme = "chadracula",
+  -- theme = "rosepine"
   transparency = true,
   hl_override = {
     Visual = {
-      bg = { "purple", -10 },
+      -- bg = { "purple", -10 },
+      bg = "#E78284"
+      -- fg = "red"
       -- reverse = true
     },
 
@@ -33,8 +39,11 @@ local LinuxTheme = {
 
     IblScopeChar = { fg = "pink" },
 
-    -- ["@comment"] = { fg = "#990088" }
-    ["@comment"] = { fg = { "purple", -20 } }
+    -- ["@variable"] = { fg = "#DE3163"},
+    ["@variable"] = {fg = "#FFB6C1"},
+
+    ["@comment"] = { fg = "#AA336A" }
+    -- ["@comment"] = { fg = { "purple", -20 } }
   },
 }
 
