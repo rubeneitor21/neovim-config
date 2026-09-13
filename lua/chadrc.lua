@@ -38,6 +38,13 @@ local LinuxTheme = {
     NonText = {fg = "#D28FB3"},
 
     IblScopeChar = { fg = "pink" },
+  
+    ["@ibl.scope.char.1"] = {fg = "red"},
+
+    NvimTreeFolderName = {fg="#AA336A"},
+    NvimTreeOpenedFolderName = {fg="#AA336A"},
+    NvimTreeFolderIcon = {fg="#AA336A"},
+    NvimTreeFolderArrowOpen = {fg="#AA336A"},
 
     -- ["@variable"] = { fg = "#DE3163"},
     ["@variable"] = {fg = "#FFB6C1"},
@@ -103,6 +110,7 @@ M.nvdash = {
   -- },
 }
 
+M.ui = theme_os
 M.base46 = theme_os
 
 return M

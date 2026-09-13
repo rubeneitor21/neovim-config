@@ -36,6 +36,37 @@ return {
     }
   },
 
+  {
+  "HiPhish/rainbow-delimiters.nvim",
+    -- Se carga automáticamente al abrir cualquier archivo de código
+    event = "BufReadPost", 
+    config = function()
+      local rainbow_delimiters = require("rainbow-delimiters")
+
+      -- Configuramos el comportamiento del arcoíris en los paréntesis/corchetes
+      vim.g.rainbow_delimiters = {
+        strategy = {
+            [''] = 'rainbow-delimiters.strategy.local',
+            vim = 'rainbow-delimiters.strategy.local',
+        },
+        query = {
+            [''] = 'rainbow-delimiters',
+            lua = 'rainbow-blocks',
+        },
+        priority = {
+            [''] = 110,
+            lua = 210,
+        },
+        -- highlight = {
+        --     'RainbowDelimiterWhite',
+        --     'RainbowDelimiterViolet',
+        --     'RainbowDelimiterCyan',
+        --     'RainbowDelimiterRed'
+        -- },
+      }
+    end,
+  },
+
   -- {
   --   "lomasnico/godot.nvim",
   --   config = function()
