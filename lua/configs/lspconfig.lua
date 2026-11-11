@@ -17,6 +17,22 @@ local nvlsp = require "nvchad.configs.lspconfig"
 
 vim.lsp.config('qmlls', { cmd = { 'qmlls6' } })
 
+vim.lsp.config("astro", {
+  before_init = function(_, config)
+    local util = require('lspconfig.util')
+    local tsdk = util.get_typescript_server_path(config.root_dir)
+    if tsdk == '' then
+      local npm_root = vim.fn.systemlist('npm root -g')
+      if vim.v.shell_error == 0 and npm_root[1] then
+        tsdk = npm_root[1] .. '/typescript/lib'
+      end
+    end
+    config.init_options = config.init_options or {}
+    config.init_options.typescript = config.init_options.typescript or {}
+    config.init_options.typescript.tsdk = tsdk
+  end,
+})
+
 -- lsps with default config
 for _, lsp in ipairs(servers) do
   vim.lsp.enable(lsp)

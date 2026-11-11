@@ -17,5 +17,9 @@ map("n", "<leader>gl", ":Gitsigns toggle_current_line_blame<CR>", {desc = "Toggl
 map("n", "<leader>ga", ":Gitsigns blame<CR>", {desc = "Show git blame aside"})
 map("n", "<leader>gb", ":Gitsigns blame_line<CR>", {desc = "Show git blame block"})
 
+map("n", "<leader>ca", function()
+  vim.lsp.buf.code_action()
+end, {desc = "Code actions"})
+
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
